@@ -1,3 +1,6 @@
-<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light" style="justify-content: center;">
+ <% if user_signed_in? %>
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light" style="justify-content: center;">
   <%= link_to "Instagram",{ controller: "pages", action: "home"}, class: "navbar-brand" %>
-</nav>
+  </nav>
+  <% end %>
+  
