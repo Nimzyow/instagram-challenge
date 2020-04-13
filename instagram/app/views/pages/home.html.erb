@@ -1,4 +1,9 @@
 <div style="overflow-y: scroll">
+
+  <% @posts.each do |post| %>
+  <%= image_tag post.image.url, class: "img img-fluid" %>
+  <% end %>
+
   <div class="card" >
     <%= image_tag "nima.jpg", style: "width: 100%;" %>
     <div class="post-interaction-icons">
