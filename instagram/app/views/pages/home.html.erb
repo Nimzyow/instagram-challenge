@@ -1,7 +1,16 @@
 <div style="overflow-y: scroll">
 
   <% @posts.each do |post| %>
-  <%= image_tag post.image.url, class: "img img-fluid" %>
+    <div class="card" >
+      <%= image_tag post.image.url, style: "width: 100%;" %>
+      <div class="post-interaction-icons">
+      <i class="far fa-heart fa-2x"></i>
+      <i class="far fa-comment fa-2x" style="margin-left: 20px;"></i>
+      </div>
+      <div class="card-body">
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content...</p>
+      </div>
+    </div>
   <% end %>
 
   <div class="card" >
