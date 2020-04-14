@@ -4,9 +4,15 @@
     <div class="card" >
       <%= image_tag post.image.url, style: "width: 100%;" %>
       <div class="post-interaction-icons">
-      <i class="far fa-heart fa-2x"></i>
+
+      <%= link_to likeposts_path(:post_id => post.id), method: :post do %>
+        <i class="far fa-heart fa-2x"></i>
+      <% end %>
+
       <i class="far fa-comment fa-2x" style="margin-left: 20px;"></i>
       </div>
+      <% @likes = Likepost.where(post_id: post.id).length %>
+      <p><%= @likes %> likes</p>
       <div class="card-body">
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content...</p>
       </div>

@@ -1,0 +1,3 @@
+class Likepost < ApplicationRecord
+  
+end
