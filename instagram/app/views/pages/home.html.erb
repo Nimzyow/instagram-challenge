@@ -5,7 +5,7 @@
       <%= image_tag post.image.url, style: "width: 100%;" %>
       <div class="post-interaction-icons">
 
-      <%= link_to likeposts_path(:post_id => post.id), method: :post do %>
+      <%= link_to likeposts_path(:post_id => post.id),:remote => true, method: :post do %>
         <i class="far fa-heart fa-2x"></i>
       <% end %>
 
