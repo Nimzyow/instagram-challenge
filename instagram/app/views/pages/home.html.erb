@@ -6,7 +6,12 @@
       <div class="post-interaction-icons">
 
       <%= link_to likeposts_path(:post_id => post.id),:remote => true, method: :post do %>
-        <i class="far fa-heart fa-2x"></i>
+      <% @likePosts = Likepost.where(user_id: current_user.id, post_id: post.id).length %>
+        <% if @likePosts === 0 %>
+          <i class="far fa-heart fa-2x"></i>
+        <% else %>
+          <i class="fas fa-heart fa-2x"></i>
+        <% end %>
       <% end %>
 
       <i class="far fa-comment fa-2x" style="margin-left: 20px;"></i>
